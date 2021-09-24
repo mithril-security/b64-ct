@@ -165,7 +165,7 @@ fn decode64<D: Decoder, P: Packer>(input: &[u8], decoder: D, packer: P) -> Resul
 pub(super) fn decode64_arch(input: &[u8]) -> Result<Vec<u8>, Error> {
     unsafe {
         if is_x86_feature_detected!("avx2")
-            && is_x86_feature_detected!("bmi1")
+            // && is_x86_feature_detected!("bmi1")
             && is_x86_feature_detected!("sse4.2")
             && is_x86_feature_detected!("popcnt")
         {
